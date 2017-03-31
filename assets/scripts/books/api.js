@@ -16,11 +16,18 @@ const show = function (id) {
   })
 }
 
-const delete = function (id) {
-  
+const destroy = function (id) {
+  // store the info of the book being deleted
+  const deletedBook = id // console.log(data.book)
+  console.log(id)
+  return $.ajax({
+    url: app.host + '/books/' + id,
+    method: 'DELETE'
+  })
 }
 
 module.exports = {
   index,
-  show
+  show,
+  destroy
 }
